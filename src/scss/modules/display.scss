@@ -8,7 +8,6 @@
     margin: 0 auto;
 }
 .display__title {
-    font-family: Roboto;
     font-style: normal;
     font-weight: bold;
     font-size: 48px;
@@ -17,7 +16,6 @@
     padding: 192px 0 50px 10px;
 }
 .display__subtitle {
-    font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -30,21 +28,17 @@
     height: 40px;
     background: #F13C6E;
     border: 2px solid #FFFFFF;
-    box-sizing: border-box;
     border-radius: 40px;
     margin: 50px 0 176px 10px;
     a {
-        font-family: Roboto;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
         line-height: 16px;
-        text-align: center;
-        letter-spacing: 0.05em;
         color: #FFFFFF;
     }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 	.display {
 		background-size: auto 328px;
     }
