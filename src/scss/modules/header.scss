@@ -2,30 +2,137 @@
     background: #EFEFEF;
     display: flex;
     justify-content: center;
-    li {
-        display: inline-block;
+    height: 48px;
+}
+@media (max-width: 720px) {
+	.header__boxnav {
+		justify-content: flex-start;
     }
-    a {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-        color: #333333;
-        padding: 15px;
-        display: inline-block;
+    .header__desktopnav {
+        display: none;
     }
 }
-
+.header__desktopli {
+    display: inline-block;
+}
+.header__desktop-a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #333333;
+    padding: 15px;
+    display: inline-block;
+}
+/* --------------- Кнопка для мобильной навигации ----------- */
+.menu-icon {
+    z-index: 10;
+    display: none;
+	width: 30px;
+    height: 30px;
+    margin: 10px 0px 0px 10px;
+}
+@media (max-width: 720px) {
+    .menu-icon {
+        display: flex;
+        align-items: center;
+    }
+}
+.menu-icon-line {
+	position: relative;
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+}
+.menu-icon-line::before {
+	position: absolute;
+	left: 0;
+	top: -10px;
+	content: '';
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+.menu-icon-line::after {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	content: '';
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+.menu-icon.menu-icon-active .menu-icon-line {
+	background-color: transparent;
+}
+.menu-icon.menu-icon-active .menu-icon-line::before {
+	transform: rotate(45deg);
+	top: 0;
+	transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+.menu-icon.menu-icon-active .menu-icon-line::after {
+	transform: rotate(-45deg);
+	top: 0;
+	transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+/* ----------------- Мобильная навигация ----------------- */
+.mobile-nav {
+    z-index: 9;
+    position: fixed;
+    left: -320px;
+    top: 0;
+    height: 100%;
+    width: 320px;
+    padding: 50px;
+    background-color: rgb(239, 239, 239);
+    transition: transform 0.4s ease-in;
+}
+@media (max-width: 768px) {
+    .mobile-nav {
+        width: 320px;
+        left: -320px;
+    }
+}
+.mobile-nav--active {
+    transform: translateX(100%);
+}
+.mobile-nav__title {
+    margin-bottom: 30px;
+    color: #F13C6E;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 16px;
+}
+.mobile-nav__list {
+    list-style-type: none;
+}
+.mobile-nav__item {
+    margin-bottom: 30px;
+}
+.mobile-nav__link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 16px;
+    color: #333333;
+}
 .header__boxmain {
-    max-width: 1110px;
+    max-width: 1130px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    flex-wrap: wrap-reverse;
 }
 .header__logo {
+    margin-left: 10px;
     span {
         font-family: Roboto;
         font-style: normal;
@@ -45,8 +152,8 @@
     background-repeat: no-repeat;
     background-position: top 10px left 20px;
     padding-left: 50px;
+    margin: 10px;
 }
-
 .header__number {
     font-family: Roboto;
     font-style: normal;
@@ -62,6 +169,7 @@
     border: 2px solid #F13C6E;
     box-sizing: border-box;
     border-radius: 40px;
+    margin-right: 10px;
     a {
         font-family: Roboto;
         font-style: normal;
@@ -71,11 +179,17 @@
         color: #000000;
     }
 }
-
+@media (max-width: 910px) {
+	.header__number {
+		display: none;
+	}
+	.header__button {
+		display: none;
+	}
+}
 .header__line {
     border: 1px solid #EFEFEF;
 }
-
 .header__boxmenu {
     display: flex;
     justify-content: center;
@@ -91,5 +205,17 @@
         color: #000000;
         padding: 30px 20px;
         display: inline-block;
+    }
+}
+@media (max-width: 720px) {
+	.header__boxmenu {
+		justify-content: start;
+        li {
+            display: flex;
+            flex-direction: column;
+        }
+        a {
+            padding: 10px 10px;
+        }
     }
 }

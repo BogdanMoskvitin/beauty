@@ -2,22 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" href="/dist/app.css">
     <title>beauty</title>
 </head>
 <body>
     <div class="header">
         <div class="header__boxnav">
-            <ul>
-                <li><a href="#">Доставка</a></li>
-                <li><a href="#">Оплата</a></li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="#">Вопрос - ответ</a></li>
-                <li><a href="#">Контакты</a></li>
+			<ul class="header__desktopnav">
+                <li class="header__desktopli"><a class="header__desktop-a" href="#">Доставка</a></li>
+                <li class="header__desktopli"><a class="header__desktop-a" href="#">Оплата</a></li>
+                <li class="header__desktopli"><a class="header__desktop-a" href="#">Отзывы</a></li>
+                <li class="header__desktopli"><a class="header__desktop-a" href="#">Вопрос - ответ</a></li>
+                <li class="header__desktopli"><a class="header__desktop-a" href="#">Контакты</a></li>
             </ul>
+			<!-- Кнопка для мобильной навигации -->
+			<div class="menu-icon" id="menu-togle">
+				<div class="menu-icon-line"></div>
+            </div>
+			<!-- Мобильная навигация -->
+			<div class="mobile-nav" id="mobile-nav">
+				<div class="mobile-nav__title">Навигация</div>
+				<ul class="mobile-nav__list">
+					<li class="mobile-nav__item"><a href="#" class="mobile-nav__link">Доставка</a></li>
+					<li class="mobile-nav__item"><a href="#" class="mobile-nav__link">Оплата</a></li>
+					<li class="mobile-nav__item"><a href="#" class="mobile-nav__link">Отзывы</a></li>
+					<li class="mobile-nav__item"><a href="#" class="mobile-nav__link">Вопрос - ответ</a></li>
+					<li class="mobile-nav__item"><a href="#" class="mobile-nav__link">Контакты</a></li>
+				</ul>
+			</div>
         </div>
-
         <div class="header__boxmain">
             <div class="header__logo">
                 <img src="dist/img/logo.png" alt="">
@@ -29,9 +43,7 @@
                 <a href="#">Обратный звонок</a>
             </button>
         </div>
-
         <div class="header__line"></div>
-
         <div class="header__boxmenu">
             <ul>
                 <li><a href="#">Парикмахерская</a></li>
